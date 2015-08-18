@@ -8,6 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Button Grid.Row="1" Click="OnSmoothStreamButtonClicked" Content="Play Smooth Stream"/>
+        <Button Grid.Row="2" Click="OnDashButtonClicked" Content="Play DASH"/>
     </Grid>
 </Page>

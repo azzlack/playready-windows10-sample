@@ -26,5 +26,17 @@ namespace PlayReadySample
         {
             this.InitializeComponent();
         }
+
+        private void OnSmoothStreamButtonClicked(object sender, RoutedEventArgs e)
+        {
+            // You can get more streams (both protected and unprotected) here: http://playready.directtaps.net/smoothstreaming/
+            this.Frame.Navigate(typeof(PlayerPage), new PlayerArguments { StreamUrl = "http://playready.directtaps.net/smoothstreaming/SSWSS720H264PR/SuperSpeedway_720.ism/Manifest", RightsManagerUrl = "http://playready.directtaps.net/pr/svc/rightsmanager.asmx" });
+        }
+
+        private void OnDashButtonClicked(object sender, RoutedEventArgs e)
+        {
+            // We don't need to specify rights manager url with this stream
+            this.Frame.Navigate(typeof(PlayerPage), new PlayerArguments { StreamUrl = "http://bitdash-a.akamaihd.net/content/sintel-pr-wv/sintel.mpd" });
+        }
     }
 }
