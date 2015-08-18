@@ -68,8 +68,12 @@ namespace PlayReadySample
         private void InitializeMediaExtensionManager()
         {
             var plugins = new MediaExtensionManager();
+
+            // Add support for IIS Smooth Streaming Manifests
             plugins.RegisterByteStreamHandler("Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler", ".ism", "text/xml");
             plugins.RegisterByteStreamHandler("Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler", ".ism", "application/vnd.ms-sstr+xml");
+
+            // Add support for PlayReady video and audio files
             plugins.RegisterByteStreamHandler("Microsoft.Media.Protection.PlayReady.PlayReadyByteStreamHandler", ".pyv", "");
             plugins.RegisterByteStreamHandler("Microsoft.Media.Protection.PlayReady.PlayReadyByteStreamHandler", ".pya", "");
         }
